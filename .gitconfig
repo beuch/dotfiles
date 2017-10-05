@@ -6,10 +6,10 @@
 	eol = lf
 
 [user]
-	name = 
-	email = 
+	name = Matthew Beucherie
+	email = matthew.beucherie@changepoint.com
 [github]
-	user = 
+	user = beuch
 
 [alias]
 	who = shortlog -s
