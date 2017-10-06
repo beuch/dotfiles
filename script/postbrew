@@ -18,9 +18,10 @@ SETUP_SCRIPT="$HOME/.daptiv-dotfiles/projects/setup"
 if [ -f "$SETUP_SCRIPT" ]; then
    echo "Installing projects"
 	# PPM is setup by the base scripts - no need to manual include
-	# bash "$SETUP_SCRIPT" ttm
-	# bash "$SETUP_SCRIPT" ppmspa
+	bash "$SETUP_SCRIPT" ttm
+	bash "$SETUP_SCRIPT" ppmspa
 	# bash "$SETUP_SCRIPT" cognos
+	bash "$SETUP_SCRIPT" pm-dashboard
 fi
 
 #---------------------------------------------------------------------
