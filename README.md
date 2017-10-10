@@ -12,9 +12,11 @@ Use this repository as a template for your own personal "dotfiles" repository, i
 ```bash
 git clone https://github.com/daptiv/dotfiles-template.git ~/.dotfiles
 cd ~/.dotfiles
-git remote remove origin
+rm -rf .git/
+echo "My personal dotfiles" > ./README.md
+git init
 git remote add origin git@github.com:{your-github-username}/dotfiles.git
-git add -f *
+git add *
 git commit -a -m "Initial commit"
 git push -u origin HEAD
 ```
