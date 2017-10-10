@@ -1,11 +1,16 @@
 #!/bin/bash
-set -e
 
-# This is a special script that is run at the end of the main Strap
-# scripts.  Use it to provide additional customizations.
+# This is a special script that is run after installing items from your .Brewfile
+# Use it to provide additional customizations.
 
 # source bash profile to get environment variables set
-[ -f "$HOME/.bash_profile" ] && source "$HOME/.bash_profile"
+if [ -z "$USER_PROFILE_LOADED"] && [ -f "$HOME/.bash_profile" ]; then
+  source "$HOME/.bash_profile"
+fi
+
+# tell the script to exit with failure if any command
+# returns a non-zero exit code
+set -e
 
 #---------------------------------------------------------------------
 # Projects.  The list of supported projects comes from
@@ -16,12 +21,11 @@ set -e
 echo "Configuring projects"
 SETUP_SCRIPT="$HOME/.daptiv-dotfiles/projects/setup"
 if [ -f "$SETUP_SCRIPT" ]; then
-   echo "Installing projects"
 	# PPM is setup by the base scripts - no need to manual include
 	# bash "$SETUP_SCRIPT" ttm
 	# bash "$SETUP_SCRIPT" ppmspa
 	# bash "$SETUP_SCRIPT" cognos
-	# bash "$SETUP_SCRIPT" pm-dashboard
+  echo "Finished configuring projects"
 fi
 
 #---------------------------------------------------------------------
@@ -31,4 +35,3 @@ fi
 #---------------------------------------------------------------------
 # personal="$HOME/src/personal-configuration/setup.sh"
 #[ -f "$personal" ] && bash "$personal"
-
