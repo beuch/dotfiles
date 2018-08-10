@@ -22,9 +22,9 @@ echo "Configuring projects"
 SETUP_SCRIPT="$HOME/.daptiv-dotfiles/projects/setup"
 if [ -f "$SETUP_SCRIPT" ]; then
 	# PPM is setup by the base scripts - no need to manual include
-	# bash "$SETUP_SCRIPT" ttm
-	# bash "$SETUP_SCRIPT" ppmspa
-	bash "$SETUP_SCRIPT" cognos
+	 bash "$SETUP_SCRIPT" ttm
+	 bash "$SETUP_SCRIPT" ppmspa
+	# bash "$SETUP_SCRIPT" cognos
   echo "Finished configuring projects"
 fi
 
